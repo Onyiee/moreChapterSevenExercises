@@ -33,6 +33,8 @@ class SalesCommissionTest {
 
     @Test
     void salaryCanBeCalculated(){
-        assertEquals(650,  salesCommission.salaryCalculator(200, 5000));
+        salesCommission.salaryCalculator(200, 5000);
+        assertEquals(650, salesCommission.getCalculatedSalary());
+
     }
 }

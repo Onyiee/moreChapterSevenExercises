@@ -24,6 +24,7 @@ public class SalesCommission {
     private int basePay = 200;
     private int grossSales;
     private double salary;
+    private int [] salaryRange = new int[9];
 
     public void setBasePay(int basePay) {
         this.basePay = basePay;
@@ -42,8 +43,31 @@ public class SalesCommission {
         return grossSales;
     }
 
-    public double salaryCalculator(int basePay, int grossSales) {
+    public void salaryCalculator(int basePay, int grossSales) {
         salary = basePay + 0.09 * grossSales;
+        salaryRangeCalculator((int) salary);
+    }
+
+    public double getCalculatedSalary() {
         return salary;
     }
+
+    private void salaryRangeCalculator(int salary){
+        int calculatedSalary = salary/100;
+        switch (calculatedSalary) {
+            case 2 -> salaryRange[0]++;
+            case 3 -> salaryRange[1]++;
+            case 4 -> salaryRange[2]++;
+            case 5 -> salaryRange[3]++;
+            case 6 -> salaryRange[4]++;
+            case 7 -> salaryRange[5]++;
+            case 8 -> salaryRange[6]++;
+            case 9 -> salaryRange[7]++;
+            default -> salaryRange[8]++;
+        }
+        }
+
+
 }
+
+

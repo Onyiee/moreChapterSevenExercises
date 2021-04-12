@@ -43,7 +43,7 @@ public class SalesCommission {
         return grossSales;
     }
 
-    public void salaryCalculator(int basePay, int grossSales) {
+    public void salaryCalculator(int grossSales) {
         salary = basePay + 0.09 * grossSales;
         salaryRangeCalculator((int) salary);
     }
@@ -68,6 +68,9 @@ public class SalesCommission {
         }
 
 
+    public int[] getSalaryRange() {
+        return salaryRange;
+    }
 }
 
 

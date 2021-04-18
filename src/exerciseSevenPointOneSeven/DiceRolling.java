@@ -11,10 +11,11 @@ public class DiceRolling {
     private Die die1 = new Die();
     private Die die2 = new Die();
     private  int sumOfRolledDiceResult;
-    private  int[] arrayOfDiceResult = {};
+    private  int[] arrayOfDiceResult = new int[11];
 
 
-    public void rollBothDice() {
+
+    public void rollBothDiceAndGetSum() {
         int die1Result = die1.roll();
         int die2Result = die2.roll();
           sumOfRolledDiceResult = die1Result + die2Result;
@@ -24,12 +25,40 @@ public class DiceRolling {
         return sumOfRolledDiceResult;
     }
 
-    public void ArrayOfSumOfRolledDiceResult(int sumOfRolledDiceResult) {
-        for (int i = 0; i < arrayOfDiceResult.length; i++) {
-            if (arrayOfDiceResult[i] == 0){
-                arrayOfDiceResult[i] = sumOfRolledDiceResult;
+    public void arrayOfRolledDiceFrequency(int sumOfRolledDiceResult) {
+        switch (sumOfRolledDiceResult){
+            case 2:
+                 arrayOfDiceResult[0]++;
+                 break;
+            case 3:
+                arrayOfDiceResult[1]++;
                 break;
-            }
+            case 4:
+                arrayOfDiceResult[2]++;
+                break;
+            case 5:
+                arrayOfDiceResult[3]++;
+                break;
+            case 6:
+                arrayOfDiceResult[4]++;
+                break;
+            case 7:
+                arrayOfDiceResult[5]++;
+                break;
+            case 8:
+                arrayOfDiceResult[6]++;
+                break;
+            case 9:
+                arrayOfDiceResult[7]++;
+                break;
+            case 10:
+                arrayOfDiceResult[8]++;
+                break;
+            case 11:
+                arrayOfDiceResult[9]++;
+                break;
+            case 12:
+                arrayOfDiceResult[10]++;
         }
     }
 
